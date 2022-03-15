@@ -1,10 +1,18 @@
 <template>
   <div class="sidebar">
-    <h1>Hello</h1>
-    <select @change="updateChartType($event)">
-      <option v-for="type of types" :key="type">{{ type }}</option>
-    </select>
-    <button @click="sendPush()">PRESS</button>
+    <form action="/action_page.php">
+
+      <div class="">
+
+      </div>
+
+
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" value="John" /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
   </div>
 </template>
 <script>
