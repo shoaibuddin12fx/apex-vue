@@ -1,17 +1,18 @@
 <template>
   <div class="sidebar">
     <form action="/action_page.php">
+      <div class=""></div>
 
-      <div class="">
-
-      </div>
-
-
-      <label for="fname">First name:</label><br />
-      <input type="text" id="fname" name="fname" value="John" /><br />
-      <label for="lname">Last name:</label><br />
-      <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
-      <input type="submit" value="Submit" />
+      <label for="height">Height:</label><br />
+      <input type="text" name="height" v-model="val.chart.height" /><br />
+      <label for="offsetX">offsetX:</label><br />
+      <input
+        type="text"
+        id="offsetX"
+        name="offsetX"
+        v-model="val.chart.offsetX"
+      /><br /><br />
+      <button @click="sendPush()">Save</button>
     </form>
   </div>
 </template>
@@ -73,7 +74,7 @@ export default {
             zoomed: undefined,
             scrolled: undefined,
           },
-          height: "auto",
+          height: "",
           id: undefined,
           locales: [
             {
