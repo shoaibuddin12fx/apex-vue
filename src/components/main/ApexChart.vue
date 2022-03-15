@@ -2,7 +2,7 @@
   <h1>Chart</h1>
   <apexchart
     width="500"
-    type="bar"
+    :type="type"
     :options="options"
     :series="series"
   ></apexchart>
@@ -16,8 +16,18 @@ export default {
   components: {
       apexchart: VueApexCharts,
   },
+  mounted() { 
+    this.emitter.on("apex-obj", value => {
+      console.log("here", value)
+    });
+    this.emitter.on("apex-type-change", obj => {
+      this.type = obj.type
+    });
+    
+  },
   data: function () {
     return {
+      type: 'bar',  
       options: {
         chart: {
           id: "vuechart-example",

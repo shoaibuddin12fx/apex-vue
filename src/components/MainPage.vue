@@ -8,7 +8,7 @@
         <ApexChart />
       </div>
       <div class="section-2">
-        
+        <RightSidebar />
       </div>
     </div>
   </div>
@@ -17,10 +17,12 @@
 <script>
 
 import ApexChart from './main/ApexChart.vue';
+import RightSidebar from './main/RightSidebar.vue';
 export default {
   name: "MainPage",
   components: {
     ApexChart,
+    RightSidebar
   },
 };
 </script>
@@ -40,11 +42,21 @@ export default {
 }
 .outer-body{
   height: 100%;  
+  display: flex;
 }
 .section-1{
   height: 100%;
-  width: 80%;
+  width: 70%;
+  /* width: 70%; */
+  /* float: left; */
   border-right: 1px solid white;
-  ;
+}
+.section-2{
+  height: 100%;
+  width: 30%;
+  /* width: 30%; */
+  /* float: right; */
+  color: white;
+  border-right: 1px solid white;
 }
 </style>
