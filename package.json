@@ -10,7 +10,9 @@
   "dependencies": {
     "apexcharts": "^3.33.2",
     "core-js": "^3.8.3",
+    "install": "^0.13.0",
     "mitt": "^3.0.0",
+    "npm": "^8.5.4",
     "vue": "^3.2.13",
     "vue3-apexcharts": "^1.4.1"
   },

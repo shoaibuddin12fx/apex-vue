@@ -8,26 +8,26 @@
   ></apexchart>
 </template>
 <script>
-
 import VueApexCharts from "vue3-apexcharts";
 
 export default {
   name: "ApexChart",
   components: {
-      apexchart: VueApexCharts,
+    apexchart: VueApexCharts,
   },
-  mounted() { 
-    this.emitter.on("apex-obj", value => {
-      console.log("here", value)
+  mounted() {
+    this.emitter.on("apex-obj", (value) => {
+      this.options = value.options.chart;
+      console.log("options", this.options);
+      console.log("here", value);
     });
-    this.emitter.on("apex-type-change", obj => {
-      this.type = obj.type
+    this.emitter.on("apex-type-change", (obj) => {
+      this.type = obj.type;
     });
-    
   },
   data: function () {
     return {
-      type: 'bar',  
+      type: "bar",
       options: {
         chart: {
           id: "vuechart-example",
