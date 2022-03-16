@@ -1,7 +1,7 @@
 <template>
   <div class="outer-layout">
     <div class="outer-header">
-
+      Grafana Play Home / Edit Panel
     </div>
     <div class="outer-body">
       <div class="section-1">
@@ -30,7 +30,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .outer-layout {
-  background: black;
+  /* background: black; */
   width: 100vw;
   height: 100vh;
   padding: 0;
@@ -38,6 +38,9 @@ export default {
 }
 .outer-header{
   height: 80px;
+  color: white;
+  font-size: 28px;
+  margin: 20px;
   border-bottom: 1px solid white;
 }
 .outer-body{

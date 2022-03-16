@@ -1,7 +1,7 @@
 <template>
-  <h1>Chart</h1>
+  
   <apexchart
-    width="500"
+    width="800"
     :type="type"
     :options="options"
     :series="series"
@@ -17,9 +17,9 @@ export default {
   },
   mounted() {
     this.emitter.on("apex-obj", (value) => {
-      this.options = value.options.chart;
-      console.log("options", this.options);
-      console.log("here", value);
+      console.log(value);
+      const unwrapped = { ...value }
+      this.options = unwrapped;
     });
     this.emitter.on("apex-type-change", (obj) => {
       this.type = obj.type;
