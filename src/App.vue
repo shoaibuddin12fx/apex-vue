@@ -26,7 +26,8 @@ body{
   text-align: center;
   color: #2c3e50;
   margin-top: 60px; */
-  background: darkgray;
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
   margin: 0;
   padding: 0;
 }
