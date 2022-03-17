@@ -1,23 +1,20 @@
 <template>
-    <div class="container-fluid contain-slider">
-        <h1>Hello</h1>
-    </div>
+  <div class="container"></div>
 </template>
-
 <script>
-    // import {EventBus} from "../../eventbus";
+// import {EventBus} from "../../eventbus";
 
-
-    export default {
-        props: {
-            
-        },
-
-
-    }
+export default {
+  props: {
+    toolbarOptions: {},
+  },
+};
 </script>
 
 
-<style >
-    /* @import "TopHeaderComponent.css"; */
+<style>
+.container {
+  width: 100%;
+}
+/* @import "TopHeaderComponent.css"; */
 </style>

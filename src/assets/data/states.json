@@ -1,0 +1,21 @@
+{
+  "normal": {
+    "filter": {
+      "type": "none",
+      "value": 0
+    }
+  },
+  "hover": {
+    "filter": {
+      "type": "lighten",
+      "value": 0.15
+    }
+  },
+  "active": {
+    "allowMultipleDataPointsSelection": false,
+    "filter": {
+      "type": "darken",
+      "value": 0.35
+    }
+  }
+}

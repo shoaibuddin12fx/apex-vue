@@ -2,6 +2,7 @@
   <div class="outer-layout">
     <div class="outer-header">
       Grafana Play Home / Edit Panel
+      <top-header-component toolbarOptions=""></top-header-component>
     </div>
     <div class="outer-body">
       <div class="section-1">
@@ -15,14 +16,15 @@
 </template>
 
 <script>
-
-import ApexChart from './main/ApexChart.vue';
-import RightSidebar from './main/RightSidebar.vue';
+import ApexChart from "./main/ApexChart.vue";
+import RightSidebar from "./main/RightSidebar.vue";
+import TopHeaderComponent from "../components/header/TopHeaderComponent.vue";
 export default {
   name: "MainPage",
   components: {
     ApexChart,
-    RightSidebar
+    RightSidebar,
+    TopHeaderComponent,
   },
 };
 </script>
@@ -36,25 +38,25 @@ export default {
   padding: 0;
   margin: 0;
 }
-.outer-header{
+.outer-header {
   height: 80px;
   color: white;
   font-size: 28px;
   margin: 20px;
   border-bottom: 1px solid white;
 }
-.outer-body{
-  height: 100%;  
+.outer-body {
+  height: 100%;
   display: flex;
 }
-.section-1{
+.section-1 {
   height: 100%;
   width: 70%;
   /* width: 70%; */
   /* float: left; */
   border-right: 1px solid white;
 }
-.section-2{
+.section-2 {
   height: 100%;
   width: 30%;
   /* width: 30%; */

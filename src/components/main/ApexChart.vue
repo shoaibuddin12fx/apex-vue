@@ -1,5 +1,4 @@
 <template>
-  
   <apexchart
     width="800"
     :type="type"
@@ -18,7 +17,7 @@ export default {
   mounted() {
     this.emitter.on("apex-obj", (value) => {
       console.log(value);
-      const unwrapped = { ...value }
+      const unwrapped = { ...value };
       this.options = unwrapped;
     });
     this.emitter.on("apex-type-change", (obj) => {
