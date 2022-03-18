@@ -2,7 +2,9 @@
   <div class="outer-layout">
     <div class="outer-header">
       Grafana Play Home / Edit Panel
-      <top-header-component toolbarOptions=""></top-header-component>
+      <top-header-component
+        :headerToolbarOptions="headerToolbarOptions"
+      ></top-header-component>
     </div>
     <div class="outer-body">
       <div class="section-1">
@@ -25,6 +27,20 @@ export default {
     ApexChart,
     RightSidebar,
     TopHeaderComponent,
+  },
+  data() {
+    return {
+      headerToolbarOptions: undefined,
+    };
+  },
+  mounted() {
+    this.emitter.on("sendValuesToMain", (value) => {
+      this.headerToolbarOptions = value.toolbarOptions;
+      // this.emitter.emit("passValuesToHeaderToolbar", {
+      //   headerToolbarOptions: this.headerToolbarOptions,
+      // });
+      console.log("values recieved", this.headerToolbarOptions);
+    });
   },
 };
 </script>

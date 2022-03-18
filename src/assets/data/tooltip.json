@@ -1,4 +1,5 @@
 {
+  "attributeType": "tooltip",
   "enabled": true,
   "enabledOnSeries": [],
   "shared": true,

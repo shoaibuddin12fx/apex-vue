@@ -1,4 +1,5 @@
 {
+  "attributeType": "yaxis",
   "show": true,
   "showAlways": true,
   "showForNullSeries": true,

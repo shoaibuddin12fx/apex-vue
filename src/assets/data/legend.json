@@ -1,4 +1,5 @@
 {
+  "attributeType": "legend",
   "show": true,
   "showForSingleSeries": false,
   "showForNullSeries": true,

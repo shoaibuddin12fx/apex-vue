@@ -1,16 +1,8 @@
 <template>
   <div class="annotations">
-    <div class="accordion-background" @click="toggleHide()">
+    <div class="accordion-background" @click="sendValuesToMainToolbar()">
       <h4>Annotations</h4>
     </div>
-    <ul class="StyledList" v-if="!optionsHidden">
-      <li class="styledListItem">Position</li>
-      <li class="styledListItem">Y axis</li>
-      <li class="styledListItem">X axis</li>
-      <li class="styledListItem">Points</li>
-      <li class="styledListItem">Texts</li>
-      <li class="styledListItem">Images</li>
-    </ul>
   </div>
 </template>
 
@@ -20,11 +12,14 @@ export default {
   data() {
     return {
       optionsHidden: true,
+      annotations: require("../../assets/data/annotations.json"),
     };
   },
   methods: {
-    toggleHide() {
-      this.optionsHidden = !this.optionsHidden;
+    sendValuesToMainToolbar() {
+      this.emitter.emit("sendValuesToMain", {
+        toolbarOptions: this.annotations,
+      });
     },
   },
 };
