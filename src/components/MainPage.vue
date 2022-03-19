@@ -1,26 +1,23 @@
 <template>
   <div class="outer-layout">
-<<<<<<< HEAD
     <div class="outer-header"></div>
-=======
     <div class="outer-header">
       Grafana Play Home / Edit Panel
+      <top-header-component
+        :headerToolbarOptions="headerToolbarOptions"
+      ></top-header-component>
     </div>
->>>>>>> 6eef37556b6563526e282f5eb4d9022e13da726d
     <div class="outer-body">
       <div class="section-1">
         <ApexChart :some-data="someData" />
       </div>
       <div class="section-2">
-<<<<<<< HEAD
         <inputValues
           @changeTitle="ChangeT($event)"
           :parentData="myData"
           v-on:childToParent="onChildClick"
         />
-=======
         <RightSidebar />
->>>>>>> 6eef37556b6563526e282f5eb4d9022e13da726d
       </div>
     </div>
   </div>
@@ -29,12 +26,8 @@
 <script>
 import ApexChart from "./main/ApexChart.vue";
 import inputValues from "@/components/input-values/input-values";
-
-<<<<<<< HEAD
-=======
-import ApexChart from './main/ApexChart.vue';
 import RightSidebar from './main/RightSidebar.vue';
->>>>>>> 6eef37556b6563526e282f5eb4d9022e13da726d
+import TopHeaderComponent from "../components/header/TopHeaderComponent.vue";
 export default {
   name: "MainPage",
   data() {
@@ -44,11 +37,24 @@ export default {
   },
   components: {
     ApexChart,
-<<<<<<< HEAD
-    inputValues
-=======
-    RightSidebar
->>>>>>> 6eef37556b6563526e282f5eb4d9022e13da726d
+    inputValues,
+    RightSidebar,
+    RightSidebar,
+    TopHeaderComponent,
+  },
+  data() {
+    return {
+      headerToolbarOptions: undefined,
+    };
+  },
+  mounted() {
+    this.emitter.on("sendValuesToMain", (value) => {
+      this.headerToolbarOptions = value.toolbarOptions;
+      // this.emitter.emit("passValuesToHeaderToolbar", {
+      //   headerToolbarOptions: this.headerToolbarOptions,
+      // });
+      console.log("values recieved", this.headerToolbarOptions);
+    });
   },
 
 methods:{
@@ -80,18 +86,13 @@ methods:{
   margin: 20px;
   border-bottom: 1px solid white;
 }
-<<<<<<< HEAD
 .outer-body {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-=======
-.outer-body{
-  height: 100%;  
   display: flex;
->>>>>>> 6eef37556b6563526e282f5eb4d9022e13da726d
 }
 .section-1 {
   height: 100%;
@@ -100,20 +101,17 @@ methods:{
   /* float: left; */
   border-right: 1px solid white;
 }
-.section-2{
+.section-2 {
   height: 100%;
   width: 30%;
   /* width: 30%; */
   /* float: right; */
   color: white;
   border-right: 1px solid white;
-<<<<<<< HEAD
 }
 .section-2 {
   height: 100%;
   width: 19%;
   border-right: 1px solid rgb(38, 54, 204);
-=======
->>>>>>> 6eef37556b6563526e282f5eb4d9022e13da726d
 }
 </style>

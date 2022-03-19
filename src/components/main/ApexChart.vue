@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <h1>Chart</h1>
   <div class="container">
     <apexchart
@@ -15,15 +14,6 @@
     />
     <div style="color: white">{{someData}}</div>
   </div>
-=======
-  
-  <apexchart
-    width="800"
-    :type="type"
-    :options="options"
-    :series="series"
-  ></apexchart>
->>>>>>> 6eef37556b6563526e282f5eb4d9022e13da726d
 </template>
 <script>
 import VueApexCharts from "vue3-apexcharts";
@@ -32,20 +22,17 @@ export default {
     name: "ApexChart",
   components: {
     apexchart: VueApexCharts,
-<<<<<<< HEAD
     inputValues,
-=======
   },
   mounted() {
     this.emitter.on("apex-obj", (value) => {
       console.log(value);
-      const unwrapped = { ...value }
+      const unwrapped = { ...value };
       this.options = unwrapped;
     });
     this.emitter.on("apex-type-change", (obj) => {
       this.type = obj.type;
     });
->>>>>>> 6eef37556b6563526e282f5eb4d9022e13da726d
   },
   data: function () {
     return {
