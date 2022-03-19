@@ -7,22 +7,22 @@
       :options="options"
       :series="series"
     ></apexchart>
-    <inputValues
+    <!-- <inputValues
       @changeTitle="ChangeT($event)"
       :parentData="myData"
       v-on:childToParent="onChildClick"
-    />
+    /> -->
     <div style="color: white">{{someData}}</div>
   </div>
 </template>
 <script>
 import VueApexCharts from "vue3-apexcharts";
-import inputValues from "@/components/input-values/input-values";
+// import inputValues from "@/components/input-values/input-values";
 export default {
     name: "ApexChart",
   components: {
     apexchart: VueApexCharts,
-    inputValues,
+    // inputValues,
   },
   mounted() {
     this.emitter.on("apex-obj", (value) => {

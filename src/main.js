@@ -13,6 +13,6 @@ const app = createApp(App);
 app.config.globalProperties.emitter = emitter;
 app.mount('#app');
 app.use(VueApexCharts);
-app.use(inputValues);
+// app.use(inputValues);
 
 

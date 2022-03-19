@@ -16,7 +16,7 @@
           @changeTitle="ChangeT($event)"
           :parentData="myData"
           v-on:childToParent="onChildClick"
-        />
+        ></inputValues>
         <RightSidebar />
       </div>
     </div>
@@ -25,7 +25,7 @@
 
 <script>
 import ApexChart from "./main/ApexChart.vue";
-import inputValues from "@/components/input-values/input-values";
+import inputValues from "../components/input-values/input-values.vue";
 import RightSidebar from './main/RightSidebar.vue';
 import TopHeaderComponent from "../components/header/TopHeaderComponent.vue";
 export default {
@@ -39,14 +39,13 @@ export default {
     ApexChart,
     inputValues,
     RightSidebar,
-    RightSidebar,
     TopHeaderComponent,
   },
-  data() {
-    return {
-      headerToolbarOptions: undefined,
-    };
-  },
+  // data() {
+  //   return {
+  //     headerToolbarOptions: undefined,
+  //   };
+  // },
   mounted() {
     this.emitter.on("sendValuesToMain", (value) => {
       this.headerToolbarOptions = value.toolbarOptions;
